@@ -12,15 +12,10 @@ export class AppComponent {
 
   handleUserChanged(event): void {
     const value = event.detail;
-    console.log('---');
     console.log('value', value);
-    console.log('---');
   }
 
   handleValidationChanged(event): void {
     this.isValid = event.detail;
-    console.log('---');
-    console.log('isValid', this.isValid);
-    console.log('---');
   }
 }
