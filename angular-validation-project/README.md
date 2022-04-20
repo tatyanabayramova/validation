@@ -9,6 +9,6 @@ When starting out with the demo, it is important to install all the required dep
 npm install 
 ```
 
-**Important**: you have to generate Angular component from Stencil one **before** running demo project. To do this, please check out instructions [here](../validator/README.md).
+**Important**: you have to generate Angular components from Stencil ones **before** running the demo project. To do this, please check out instructions [here](../validator/README.md).
 
 Then, you can run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
