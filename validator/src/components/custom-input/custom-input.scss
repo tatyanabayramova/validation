@@ -1,0 +1,56 @@
+@function get-sizes() {
+  @return 'medium', 'large';
+}
+
+:host {
+  --error-color: #c63232;
+  --error-bg-color: rgb(198 50 50 / 20%);
+  --grey-color: #8e99a5;
+  --padding-large: 10px;
+  --padding-medium: 8px;
+
+  .custom-input-container {
+    display: block;
+
+    &__input {
+      border-radius: 5px;
+      border: 1px solid var(--grey-color);
+      background-color: white;
+      outline: none;
+
+      &--invalid {
+        border-color: var(--error-color);
+        background-color: var(--error-bg-color);
+      }
+
+      &:focus {
+        background-color: white;
+      }
+
+      @each $size in get-sizes() {
+        &--#{$size} {
+          padding: var(--padding-#{$size});
+        }
+      }
+
+    }
+
+    &__error {
+      display: none;
+      color: var(--error-color);
+
+      &--upper {
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  .custom-input-container__input--invalid + .custom-input-container__error {
+    display: block;
+    margin: 6px 0 0 2px;
+    font-size: 12px;
+    font-weight: 400;
+    padding: 0;
+  }
+
+}
