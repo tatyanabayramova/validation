@@ -10,7 +10,7 @@ To build the component for production, run:
 npm run build
 ```
 
-This will put the component to the `/angular-validation-project/src/lib/stencil-generated` folder.
+This will put the compiled component to the `/angular-validation-project/src/lib/stencil-generated` folder.
 
 ### Props
 
@@ -23,24 +23,3 @@ This will put the component to the `/angular-validation-project/src/lib/stencil-
 
 * `userInputChanged: EventEmitter<string>` - is triggered when value of an input is changed, either by typing or pasting in. Current value is passed to the callback, and is accessible via `event.detail`.
 * `validationChanged: EventEmitter<boolean>` - is triggered when input changes state from valid to invalid, and vice versa. Current validation state is passed to the callback, and is accessible via `event.detail`.
-
-## Using this component
-
-There are three strategies we recommend for using web components built with Stencil.
-
-The first step for all three of these strategies is to [publish to NPM](https://docs.npmjs.com/getting-started/publishing-npm-packages).
-
-### Script tag
-
-- Put a script tag similar to this `<script type='module' src='https://unpkg.com/my-component@0.0.1/dist/my-component.esm.js'></script>` in the head of your index.html
-- Then you can use the element anywhere in your template, JSX, html etc
-
-### Node Modules
-- Run `npm install my-component --save`
-- Put a script tag similar to this `<script type='module' src='node_modules/my-component/dist/my-component.esm.js'></script>` in the head of your index.html
-- Then you can use the element anywhere in your template, JSX, html etc
-
-### In a stencil-starter app
-- Run `npm install my-component --save`
-- Add an import to the npm packages `import my-component;`
-- Then you can use the element anywhere in your template, JSX, html etc
