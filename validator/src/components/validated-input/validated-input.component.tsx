@@ -3,12 +3,12 @@ import {Component, EventEmitter, h, Prop, Event, State} from '@stencil/core';
 export type InputSize = 'medium' | 'large';
 
 @Component({
-  tag: 'custom-input',
-  styleUrl: 'custom-input.scss',
+  tag: 'validated-input',
+  styleUrl: 'validated-input.scss',
   shadow: true,
 })
 // tslint:disable-next-line:component-class-suffix
-export class CustomInput {
+export class ValidatedInput {
 
   @State()
   value: string;
@@ -65,7 +65,7 @@ export class CustomInput {
   // tslint:disable-next-line:typedef
   render() {
     return (
-      <div class={'custom-input-container'}>
+      <div class={'validated-input-container'}>
         <input type={this.type}
                value={this.value}
                placeholder={this.placeholder}
@@ -78,12 +78,12 @@ export class CustomInput {
   }
 
   private getInputClass() {
-    return `custom-input-container__input custom-input-container__input--${this.size} ${!this.isValid ? 'custom-input-container__input--invalid' : ''}`;
+    return `validated-input-container__input validated-input-container__input--${this.size} ${!this.isValid ? 'validated-input-container__input--invalid' : ''}`;
   }
 
   private renderErrorMessage() {
-    return <p class={'custom-input-container__error'}>
-      Fill a valid <span class={'custom-input-container__error--upper'}>{this.type}</span>
+    return <p class={'validated-input-container__error'}>
+      Fill a valid <span class={'validated-input-container__error--upper'}>{this.type}</span>
     </p>;
   }
 }

@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 
-import {CustomInput} from 'src/lib/stencil-generated/components';
+import {ValidatedInput} from 'src/lib/stencil-generated/components';
 // @ts-ignore
 import {defineCustomElements} from '@validator/loader';
 
@@ -8,10 +8,10 @@ defineCustomElements(window);
 
 @NgModule({
   declarations: [
-    CustomInput
+    ValidatedInput
   ],
   exports: [
-    CustomInput,
+    ValidatedInput,
   ],
   imports: [],
   providers: [],

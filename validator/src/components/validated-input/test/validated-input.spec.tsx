@@ -1,18 +1,18 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { CustomInput } from '../custom-input';
+import { ValidatedInput } from '../validated-input.component';
 
-describe('custom-input', () => {
+describe('validated-input', () => {
   it('renders', async () => {
     const page = await newSpecPage({
-      components: [CustomInput],
-      html: `<custom-input></custom-input>`,
+      components: [ValidatedInput],
+      html: `<validated-input></validated-input>`,
     });
     expect(page.root).toEqualHtml(`
-      <custom-input>
+      <validated-input>
         <mock:shadow-root>
           <input />
         </mock:shadow-root>
-      </custom-input>
+      </validated-input>
     `);
   });
 });

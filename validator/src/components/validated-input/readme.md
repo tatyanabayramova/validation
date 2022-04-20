@@ -1,4 +1,4 @@
-# custom-input
+# validated-input
 
 
 
@@ -10,7 +10,7 @@
 | Property            | Attribute            | Description | Type                  | Default     |
 | ------------------- | -------------------- | ----------- | --------------------- | ----------- |
 | `placeholder`       | `placeholder`        |             | `string`              | `''`        |
-| `size`              | `size`               |             | `"large" \| "medium"` | `'medium'`  |
+| `size`              | `size`               |             | `"large", "medium"` | `'medium'`  |
 | `type`              | `type`               |             | `string`              | `'text'`    |
 | `validationPattern` | `validation-pattern` |             | `string`              | `undefined` |
 

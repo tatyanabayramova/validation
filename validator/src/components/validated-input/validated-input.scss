@@ -9,7 +9,7 @@
   --padding-large: 10px;
   --padding-medium: 8px;
 
-  .custom-input-container {
+  .validated-input-container {
     display: block;
 
     &__input {
@@ -45,7 +45,7 @@
     }
   }
 
-  .custom-input-container__input--invalid + .custom-input-container__error {
+  .validated-input-container__input--invalid + .validated-input-container__error {
     display: block;
     margin: 6px 0 0 2px;
     font-size: 12px;

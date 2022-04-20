@@ -8,7 +8,7 @@ import { Components } from '@validator/dist/components';
 
 
 
-export declare interface CustomInput extends Components.CustomInput {
+export declare interface ValidatedInput extends Components.ValidatedInput {
   /**
    *  
    */
@@ -25,12 +25,12 @@ export declare interface CustomInput extends Components.CustomInput {
   inputs: ['placeholder', 'size', 'type', 'validationPattern']
 })
 @Component({
-  selector: 'custom-input',
+  selector: 'validated-input',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   inputs: ['placeholder', 'size', 'type', 'validationPattern']
 })
-export class CustomInput {
+export class ValidatedInput {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();

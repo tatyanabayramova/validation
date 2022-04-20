@@ -5,9 +5,9 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { InputSize } from "./components/custom-input/custom-input";
+import { InputSize } from "./components/validated-input/validated-input.component";
 export namespace Components {
-    interface CustomInput {
+    interface ValidatedInput {
         "placeholder": string;
         "size": InputSize;
         "type": string;
@@ -15,18 +15,18 @@ export namespace Components {
     }
 }
 declare global {
-    interface HTMLCustomInputElement extends Components.CustomInput, HTMLStencilElement {
+    interface HTMLValidatedInputElement extends Components.ValidatedInput, HTMLStencilElement {
     }
-    var HTMLCustomInputElement: {
-        prototype: HTMLCustomInputElement;
-        new (): HTMLCustomInputElement;
+    var HTMLValidatedInputElement: {
+        prototype: HTMLValidatedInputElement;
+        new (): HTMLValidatedInputElement;
     };
     interface HTMLElementTagNameMap {
-        "custom-input": HTMLCustomInputElement;
+        "validated-input": HTMLValidatedInputElement;
     }
 }
 declare namespace LocalJSX {
-    interface CustomInput {
+    interface ValidatedInput {
         "onUserInputChanged"?: (event: CustomEvent<string>) => void;
         "onValidationChanged"?: (event: CustomEvent<boolean>) => void;
         "placeholder"?: string;
@@ -35,14 +35,14 @@ declare namespace LocalJSX {
         "validationPattern"?: string;
     }
     interface IntrinsicElements {
-        "custom-input": CustomInput;
+        "validated-input": ValidatedInput;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "custom-input": LocalJSX.CustomInput & JSXBase.HTMLAttributes<HTMLCustomInputElement>;
+            "validated-input": LocalJSX.ValidatedInput & JSXBase.HTMLAttributes<HTMLValidatedInputElement>;
         }
     }
 }

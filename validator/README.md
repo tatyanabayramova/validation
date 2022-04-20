@@ -21,5 +21,5 @@ This will put the compiled component to the `/angular-validation-project/src/lib
 
 ### Events
 
-* `userInputChanged: EventEmitter<string>` - is triggered when value of an input is changed, either by typing or pasting in. Current value is passed to the callback, and is accessible via `event.detail`.
-* `validationChanged: EventEmitter<boolean>` - is triggered when input changes state from valid to invalid, and vice versa. Current validation state is passed to the callback, and is accessible via `event.detail`.
+* `userInputChanged: CustomEvent<string>` - is triggered when value of an input is changed, either by typing or pasting in. Current value is passed to the callback, and is accessible via `event.detail`.
+* `validationChanged: CustomEvent<boolean>` - is triggered when input changes state from valid to invalid, and vice versa. Current validation state is passed to the callback, and is accessible via `event.detail`.
