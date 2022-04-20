@@ -13,7 +13,7 @@ export class CustomInput {
   @State()
   value: string;
 
-  @Prop({mutable: true})
+  @State()
   isValid = true;
 
   @Prop()
@@ -26,7 +26,7 @@ export class CustomInput {
   size: InputSize = 'medium';
 
   @Prop()
-  validationPattern;
+  validationPattern: string;
 
   @Event()
   userInputChanged: EventEmitter<string>;
@@ -49,9 +49,9 @@ export class CustomInput {
     this.userInputChanged.emit(value);
   }
 
-  setValidation(value: boolean): void {
-    this.isValid = value;
-    this.validationChanged.emit(value);
+  setValidation(isValid: boolean): void {
+    this.isValid = isValid;
+    this.validationChanged.emit(isValid);
   }
 
   handleValidationChange(value: string): void {
@@ -70,11 +70,20 @@ export class CustomInput {
                value={this.value}
                placeholder={this.placeholder}
                onInput={(ev) => this.handleChange(ev)}
-               class={`custom-input-container__input custom-input-container__input--${this.size} ${!this.isValid ? 'custom-input-container__input--invalid' : ''}`}
+               class={this.getInputClass()}
         />
-        <p class={'custom-input-container__error'}>Fill a valid <span class={'custom-input-container__error--upper'}>{this.type}</span></p>
+        {this.renderErrorMessage()}
       </div>
     );
+  }
 
-}
+  private getInputClass() {
+    return `custom-input-container__input custom-input-container__input--${this.size} ${!this.isValid ? 'custom-input-container__input--invalid' : ''}`;
+  }
+
+  private renderErrorMessage() {
+    return <p class={'custom-input-container__error'}>
+      Fill a valid <span class={'custom-input-container__error--upper'}>{this.type}</span>
+    </p>;
+  }
 }

@@ -8,11 +8,10 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { InputSize } from "./components/custom-input/custom-input";
 export namespace Components {
     interface CustomInput {
-        "isValid": boolean;
         "placeholder": string;
         "size": InputSize;
         "type": string;
-        "validationPattern": any;
+        "validationPattern": string;
     }
 }
 declare global {
@@ -28,13 +27,12 @@ declare global {
 }
 declare namespace LocalJSX {
     interface CustomInput {
-        "isValid"?: boolean;
         "onUserInputChanged"?: (event: CustomEvent<string>) => void;
         "onValidationChanged"?: (event: CustomEvent<boolean>) => void;
         "placeholder"?: string;
         "size"?: InputSize;
         "type"?: string;
-        "validationPattern"?: any;
+        "validationPattern"?: string;
     }
     interface IntrinsicElements {
         "custom-input": CustomInput;

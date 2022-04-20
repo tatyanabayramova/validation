@@ -9,11 +9,10 @@
 
 | Property            | Attribute            | Description | Type                  | Default     |
 | ------------------- | -------------------- | ----------- | --------------------- | ----------- |
-| `isValid`           | `is-valid`           |             | `boolean`             | `true`      |
 | `placeholder`       | `placeholder`        |             | `string`              | `''`        |
 | `size`              | `size`               |             | `"large" \| "medium"` | `'medium'`  |
 | `type`              | `type`               |             | `string`              | `'text'`    |
-| `validationPattern` | `validation-pattern` |             | `any`                 | `undefined` |
+| `validationPattern` | `validation-pattern` |             | `string`              | `undefined` |
 
 
 ## Events
