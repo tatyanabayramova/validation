@@ -16,21 +16,39 @@ export class ValidatedInput {
   @State()
   isValid = true;
 
+  /**
+   * Type attribute value of an HTML input element
+   */
   @Prop()
   type = 'text';
 
+  /**
+   * Placeholder attribute value of an HTML input element
+   */
   @Prop()
   placeholder = '';
 
+  /**
+   * Defines size of the input element
+   */
   @Prop()
   size: InputSize = 'medium';
 
+  /**
+   * Regular expression in string form as consumed by RegExp objects
+   */
   @Prop()
   validationPattern: string;
 
+  /**
+   * This event is triggered when value of an input is changed, either by typing or pasting in. Current value is passed to the callback
+   */
   @Event()
   userInputChanged: EventEmitter<string>;
 
+  /**
+   * This event is triggered when input changes state from valid to invalid, and vice versa. Current validation state is passed to the callback
+   */
   @Event()
   validationChanged: EventEmitter<boolean>;
 

@@ -10,11 +10,11 @@ import { Components } from '@validator/dist/components';
 
 export declare interface ValidatedInput extends Components.ValidatedInput {
   /**
-   *  
+   * This event is triggered when value of an input is changed, either by typing or pasting in. Current value is passed to the callback 
    */
   userInputChanged: EventEmitter<CustomEvent<string>>;
   /**
-   *  
+   * This event is triggered when input changes state from valid to invalid, and vice versa. Current validation state is passed to the callback 
    */
   validationChanged: EventEmitter<CustomEvent<boolean>>;
 
