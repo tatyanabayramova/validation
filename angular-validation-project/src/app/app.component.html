@@ -1,0 +1,9 @@
+<main class="main-container">
+  <div class="control-label">Webshop URL</div>
+  <custom-input type="url"
+                size="large"
+                placeholder="https://example.com"
+                [validationPattern]="regex"
+                (validationChanged)="handleValidationChanged($event)"
+                (userInputChanged)="handleUserChanged($event)"></custom-input>
+</main>
